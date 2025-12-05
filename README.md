@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Deadlift AI
 
-## Getting Started
+Rapport final – Défi **“Devenez le CTO de Votre Santé Posturale”**
 
-First, run the development server:
+## 🏋️‍♂️ Résumé du projet
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Deadlift AI** est une application d’analyse en temps réel de la posture lors du soulevé de terre.  
+Elle aide les sportifs à exécuter correctement ce mouvement à haut risque de blessure grâce à une correction immédiate et intelligente.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🎯 Fonctionnalités clés
+- Détection de pose ultra‑précise avec **MediaPipe**
+- Classification du stade (montée/descente) via un modèle **scikit‑learn**
+- Comptage automatique des répétitions **valides uniquement**
+- Feedback visuel et textuel instantané sur les erreurs posturales
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🥇 Niveau 1 — Profilage Sportif
 
-## Learn More
+Au premier démarrage, un QCM rapide adapte le système à l'utilisateur :
 
-To learn more about Next.js, take a look at the following resources:
+- Niveau d’expérience (débutant / intermédiaire / avancé)
+- Antécédents de douleurs lombaires
+- Objectif (force / hypertrophie / technique / santé)
+- Fréquence d’entraînement
+- Suggestion automatique de variante : **Conventional, Sumo ou Romanian Deadlift**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🥈🥉 Niveaux 2 & 3 — Instructions personnalisées + Visualisation
 
-## Deploy on Vercel
+### 📝 Feedback textuel en temps réel
+Affiché directement sur la vidéo :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ❗ Dos trop arrondi  
+- ❗ Hanches trop hautes  
+- ❗ Barre trop éloignée  
+- ❗ Genoux pas assez fléchis  
+- Conseils adaptés au profil (ex. rétroversion du bassin)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 👁️ Visualisation avancée
+- Squelette complet (33 landmarks MediaPipe)
+- Colonne vertébrale en rouge si arrondi
+- Trajectoire idéale de la barre en vert
+- Compteur de répétitions valides
+- Jauge de symétrie gauche/droite
+
+---
+
+## 🛒 Niveau 4 — Lien commercial (Bonus Decathlon)
+
+Recommandations personnalisées :
+- Barre olympique Domyos 20 kg  
+- Ceinture lombaire renforcée  
+- Tapis épais 15 mm  
+- Chaussures d’haltérophilie  
+Liens avec tag `?ref=deadlift-ai-nuitinfo2025`.
+
+---
+
+## 🧱 Architecture & Déploiement
+
+### Backend
+- **Flask API**
+  - `/detect`
+  - `/stream`
+  - `/status`
+  - `/reset`
+
+### Frontend
+- **CustomTkinter** interface locale moderne
+
+### Modèle
+- RandomForest pré‑entraîné (**12 000 frames**)  
+- Fichier : `deadlift.pkl`
+
+### Docker
+- Déploiement instantané via `docker-compose.yml`
+
+### Dépôt officiel
+👉 https://github.com/iyedzarrougui/Deadlift_AI
+
+---
+
+## 🚀 Conclusion
+
+Deadlift AI transforme une simple webcam en **coach intelligent** permettant d’améliorer la technique et de prévenir les blessures, sur l’un des exercices les plus exigeants.
+
+### 🔮 Prochaines étapes
+- Support du squat, développé couché et tractions
+- Version web + mobile
+- Partenariat Decathlon pour utilisation en magasin
+
+---
+
+## 👤 Auteurs
+Iyed Zarrougui  
+*Nuit de l'Info 2025 – Santé Posturale & Sport*
+
